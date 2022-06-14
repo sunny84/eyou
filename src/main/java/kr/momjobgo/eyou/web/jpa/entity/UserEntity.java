@@ -15,7 +15,7 @@ import java.util.List;
 @ToString(callSuper = true)
 @AllArgsConstructor
 @NoArgsConstructor
-@Builder
+//@Builder
 @Entity
 @EntityListeners(AuditingEntityListener.class)
 @Table(name="USERS")

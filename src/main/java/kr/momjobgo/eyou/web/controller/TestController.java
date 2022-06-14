@@ -22,6 +22,7 @@ public class TestController {
      * Double
      * @return
      */
+
     @GetMapping("/join/test")
     public ResponseEntity<?> test() {
         return ResponseEntity.ok(testService.testJoin());
