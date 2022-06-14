@@ -12,7 +12,7 @@ public class RecipeEntity {
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
     private Long id;
-
-    @OneToMany(mappedBy = "recipe_id")
-    private List<RecipeRecipeBoxEntity> recipeBoxs = new ArrayList<>();
+//
+//    @OneToMany(mappedBy = "recipe_id")
+//    private List<RecipeRecipeBoxEntity> recipeBoxs = new ArrayList<>();
 }

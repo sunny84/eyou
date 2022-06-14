@@ -10,8 +10,8 @@ import java.util.List;
 
 @RestController("/recipe-box")
 public class RecipeBoxController {
-    @GetMapping("/all")
-    public List<RecipeRecipeBoxEntity> getAll(@AuthenticationPrincipal UserEntity entity){
-        return null;
-    }
+//    @GetMapping("/all")
+//    public List<RecipeRecipeBoxEntity> getAll(@AuthenticationPrincipal UserEntity entity){
+//        return null;
+//    }
 }

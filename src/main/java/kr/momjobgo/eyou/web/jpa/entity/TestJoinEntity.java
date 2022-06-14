@@ -40,4 +40,9 @@ public class TestJoinEntity {
 //    @JoinColumn(name ="test_id")
 //    private TestEntity testEntity;
     // 단방향 조회2 끝
+
+    // 단방향 USER 조회 시작
+    @Column(name = "user_id")
+    private Long userId;
+    // 단방향 USER 조회 끝
 }

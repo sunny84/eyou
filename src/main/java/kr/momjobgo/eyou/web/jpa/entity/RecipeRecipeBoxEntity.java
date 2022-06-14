@@ -12,16 +12,16 @@ public class RecipeRecipeBoxEntity {
     @Column(name = "id", nullable = false)
     private Long id;
 
-    @ManyToOne
-    @JoinColumn(name = "recipe_id")
-    private RecipeEntity recipe;
-
-    @ManyToOne
-    @JoinColumn(name = "recipe_box_id")
-    private RecipeBoxEntity recipeBox;
-
-    @ManyToOne
-    @JoinColumn(name = "user_id")
-    private UserEntity user;
+//    @ManyToOne
+//    @JoinColumn(name = "recipe_id")
+//    private RecipeEntity recipe;
+//
+//    @ManyToOne
+//    @JoinColumn(name = "recipe_box_id")
+//    private RecipeBoxEntity recipeBox;
+//
+//    @ManyToOne
+//    @JoinColumn(name = "user_id")
+//    private UserEntity user;
 
 }
