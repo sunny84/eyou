@@ -1,4 +1,4 @@
-save-file-path: D:\1_FILE_PATH
+save-file-path: C:\1_FILE_PATH
 
 spring:
   datasource:
@@ -16,6 +16,7 @@ spring:
 
   jpa:
     hibernate:
+      ddl-auto: update
       naming:
         physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
         implicit-strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyLegacyJpaImpl

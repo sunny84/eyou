@@ -18,21 +18,9 @@ import java.util.Optional;
 public class UserServiceImpl implements UserService {
 
     private final UserRepository userRepository;
-    private final TestJoinRepository testJoinRepository;
 
-    public UserServiceImpl(UserRepository userRepository, TestJoinRepository testJoinRepository){
+    public UserServiceImpl(UserRepository userRepository){
         this.userRepository = userRepository;
-        this.testJoinRepository = testJoinRepository;
-    }
-
-    @Override
-    public List<UserEntity> testJoin() {
-        return userRepository.findAll();
-    }
-
-    @Override
-    public List<TestJoinEntity> testJoin2() {
-        return testJoinRepository.findAll();
     }
     @Override
     public List<UserEntity> getAllUser(){
@@ -59,5 +47,10 @@ public class UserServiceImpl implements UserService {
 
         return Token.TokenResponse.builder().token(token).build();
     }
+
+//    @Override
+//    public List<UserEntity> testJoin() {
+//        return userRepository.findAll();
+//    }
 
 }

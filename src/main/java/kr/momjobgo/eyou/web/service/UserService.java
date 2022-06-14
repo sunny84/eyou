@@ -9,10 +9,10 @@ import kr.momjobgo.eyou.web.jpa.entity.UserEntity;
 import java.util.List;
 
 public interface UserService {
-    List<UserEntity> testJoin();
-
-    List<TestJoinEntity> testJoin2();
     List<UserEntity> getAllUser();
 
     Token.TokenResponse login(Token.TokenRequest request) throws JsonProcessingException;
+//    List<UserEntity> testJoin();
+
+
 }
