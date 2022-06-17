@@ -48,9 +48,4 @@ public class UserServiceImpl implements UserService {
         return Token.TokenResponse.builder().token(token).build();
     }
 
-//    @Override
-//    public List<UserEntity> testJoin() {
-//        return userRepository.findAll();
-//    }
-
 }

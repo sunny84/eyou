@@ -40,7 +40,4 @@ public class TestJoinEntity {
 //    @JoinColumn(name ="test_id")
 //    private TestEntity testEntity;
     // 단방향 조회2 끝
-
-//    @Column(name = "user_id")
-//    private Long userId;
 }

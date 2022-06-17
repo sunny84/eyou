@@ -12,7 +12,5 @@ public interface UserService {
     List<UserEntity> getAllUser();
 
     Token.TokenResponse login(Token.TokenRequest request) throws JsonProcessingException;
-//    List<UserEntity> testJoin();
-
 
 }

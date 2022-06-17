@@ -1,28 +1,31 @@
 package kr.momjobgo.eyou.web.service;
 
 import kr.momjobgo.eyou.web.jpa.entity.RecipeBoxEntity;
-import kr.momjobgo.eyou.web.jpa.entity.TestJoinEntity;
+import kr.momjobgo.eyou.web.jpa.entity.RecipeRecipeBoxEntity;
+import kr.momjobgo.eyou.web.jpa.entity.UserEntity;
+import kr.momjobgo.eyou.web.jpa.entity.RecipeEntity;
 
 import java.util.List;
 
 public interface RecipeBoxService {
 
-    List<RecipeBoxEntity> testJoin();
+    List<RecipeRecipeBoxEntity> getRecipeRecipeBox();
 
-    List<TestJoinEntity> testJoin2();
+    List<UserEntity> getUser();
+    List<RecipeEntity> getRecipe();
 
     List<RecipeBoxEntity> getAll();
 
-    RecipeBoxEntity getTest(Long id);
+    RecipeBoxEntity getRecipeBoxId(Long id);
 
-    RecipeBoxEntity insertTest(String name);
+    RecipeBoxEntity insertRecipeBoxName(String name);
 
-    RecipeBoxEntity insertTest2(RecipeBoxEntity entity);
+    RecipeBoxEntity insertRecipeBox(RecipeBoxEntity entity);
 
-    RecipeBoxEntity updateTest(RecipeBoxEntity entity);
-    String deleteTest(Long id);
+    RecipeBoxEntity updateRecipeBox(RecipeBoxEntity entity);
+    String deleteRecipeBox(Long id);
 
     List<RecipeBoxEntity> findByName(String name);
 
-    List<RecipeBoxEntity> findByName2(String name);
+    List<RecipeBoxEntity> findByNameContains(String name);
 }

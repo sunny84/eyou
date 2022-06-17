@@ -38,8 +38,4 @@ public class UserEntity extends BaseTimeEntity {
 
     @Column(name = "enable")
     private String enable;
-
-//    @OneToMany(fetch = FetchType.LAZY)
-//    @JoinColumn(name = "user_id")
-//    private List<TestJoinEntity> testJoinEntities = new ArrayList<>();
 }

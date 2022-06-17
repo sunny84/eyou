@@ -25,8 +25,4 @@ public class AuthController {
     public ResponseEntity<?> login(@RequestBody @Valid Token.TokenRequest request) throws JsonProcessingException {
         return ResponseEntity.ok().body(userService.login(request));
     }
-//    @GetMapping("/join/test")
-//    public ResponseEntity<?> test() {
-//        return ResponseEntity.ok(userService.testJoin());
-//    }
 }

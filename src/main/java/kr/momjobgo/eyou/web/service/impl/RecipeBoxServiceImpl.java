@@ -1,9 +1,13 @@
 package kr.momjobgo.eyou.web.service.impl;
 
 import kr.momjobgo.eyou.web.jpa.entity.RecipeBoxEntity;
-import kr.momjobgo.eyou.web.jpa.entity.TestJoinEntity;
+import kr.momjobgo.eyou.web.jpa.entity.RecipeEntity;
+import kr.momjobgo.eyou.web.jpa.entity.RecipeRecipeBoxEntity;
+import kr.momjobgo.eyou.web.jpa.entity.UserEntity;
 import kr.momjobgo.eyou.web.jpa.repository.RecipeBoxRepository;
-import kr.momjobgo.eyou.web.jpa.repository.TestJoinRepository;
+import kr.momjobgo.eyou.web.jpa.repository.RecipeRecipeBoxRepository;
+import kr.momjobgo.eyou.web.jpa.repository.RecipeRepository;
+import kr.momjobgo.eyou.web.jpa.repository.UserRepository;
 import kr.momjobgo.eyou.web.service.RecipeBoxService;
 import org.springframework.stereotype.Service;
 
@@ -13,22 +17,26 @@ import java.util.Optional;
 @Service
 public class RecipeBoxServiceImpl implements RecipeBoxService {
     private final RecipeBoxRepository recipeBoxRepository;
-    private final TestJoinRepository testJoinRepository;
+    private final RecipeRecipeBoxRepository recipeRecipeBoxRepository;
+    private final RecipeRepository recipeRepository;
+    private final UserRepository userRepository;
 
-    public RecipeBoxServiceImpl(RecipeBoxRepository recipeBoxRepository, TestJoinRepository testJoinRepository) {
+    public RecipeBoxServiceImpl(RecipeBoxRepository recipeBoxRepository, RecipeRecipeBoxRepository recipeRecipeBoxRepository, UserRepository userRepository, RecipeRepository recipeRepository) {
         this.recipeBoxRepository = recipeBoxRepository;
-        this.testJoinRepository = testJoinRepository;
+        this.recipeRecipeBoxRepository = recipeRecipeBoxRepository;
+        this.userRepository = userRepository;
+        this.recipeRepository = recipeRepository;
     }
 
     @Override
-    public List<RecipeBoxEntity> testJoin() {
-        return recipeBoxRepository.findAll();
+    public List<RecipeRecipeBoxEntity> getRecipeRecipeBox() {
+        return recipeRecipeBoxRepository.findAll();
     }
+    @Override
+    public List<RecipeEntity> getRecipe() { return recipeRepository.findAll(); }
 
     @Override
-    public List<TestJoinEntity> testJoin2() {
-        return testJoinRepository.findAll();
-    }
+    public List<UserEntity> getUser() { return userRepository.findAll(); }
 
     // 모두 가져오기.
     @Override
@@ -37,7 +45,7 @@ public class RecipeBoxServiceImpl implements RecipeBoxService {
     }
 
     @Override
-    public RecipeBoxEntity getTest(Long id) {
+    public RecipeBoxEntity getRecipeBoxId(Long id) {
 
         Optional<RecipeBoxEntity> recipeBoxEntity = recipeBoxRepository.findById(id);
 
@@ -50,7 +58,7 @@ public class RecipeBoxServiceImpl implements RecipeBoxService {
     }
 
     @Override
-    public RecipeBoxEntity insertTest(String name) {
+    public RecipeBoxEntity insertRecipeBoxName(String name) {
 
         RecipeBoxEntity recipeBoxEntity = new RecipeBoxEntity();
         recipeBoxEntity.setName(name);
@@ -59,27 +67,28 @@ public class RecipeBoxServiceImpl implements RecipeBoxService {
     }
 
     @Override
-    public RecipeBoxEntity insertTest2(RecipeBoxEntity entity) {
+    public RecipeBoxEntity insertRecipeBox(RecipeBoxEntity entity) {
         return recipeBoxRepository.save(entity);
     }
 
     @Override
-    public RecipeBoxEntity updateTest(RecipeBoxEntity entity) {
+    public RecipeBoxEntity updateRecipeBox(RecipeBoxEntity entity) {
 
         RecipeBoxEntity result = null;
 
         Optional<RecipeBoxEntity> recipeBoxEntity = recipeBoxRepository.findById(entity.getId());
 
         if(recipeBoxEntity.isPresent()){
-            if(recipeBoxEntity.get().getName().equals("오준혁")){
-                result = recipeBoxRepository.save(entity);
-            }
+//            if(recipeBoxEntity.get().getId().equals('UserId'){
+//                result = recipeBoxRepository.save(entity);
+//            }
+            result = recipeBoxRepository.save(entity);
         }
         return result;
     }
 
     @Override
-    public String deleteTest(Long id) {
+    public String deleteRecipeBox(Long id) {
         recipeBoxRepository.deleteById(id);
         return "삭제성공";
     }
@@ -90,9 +99,7 @@ public class RecipeBoxServiceImpl implements RecipeBoxService {
     }
 
     @Override
-    public List<RecipeBoxEntity> findByName2(String name) {
+    public List<RecipeBoxEntity> findByNameContains(String name) {
         return recipeBoxRepository.findByNameContains(name);
     }
-
-
 }

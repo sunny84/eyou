@@ -19,7 +19,10 @@ public class RecipeBoxEntity extends BaseTimeEntity {
     private String name;
 
     @OneToMany(fetch = FetchType.LAZY)
-    @JoinColumn(name = "test_id")
-    private List<TestJoinEntity> testJoinEntities = new ArrayList<>();
+    @JoinColumn(name = "recipe_id")
+    private List<RecipeEntity> recipeEntities = new ArrayList<>();
 
+    @OneToMany(fetch = FetchType.LAZY)
+    @JoinColumn(name = "user_id")
+    private List<UserEntity> userEntities = new ArrayList<>();
 }
